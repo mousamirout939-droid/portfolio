@@ -1,6 +1,6 @@
 export const profile = {
   name: "Mousami Rout",
-  role: "ML / AI Engineer",
+  role: "ML / AI Engineer,Full Stack Developer",
   location: "Bengaluru, India",
   email: "routmousami@gmail.com",
   phone: "+91-8050738188",
