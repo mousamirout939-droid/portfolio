@@ -33,7 +33,11 @@ export default function EducationPage() {
             <p className="eyebrow">Certifications</p>
             <ul className="cert-list">
               {certifications.map((c) => (
-                <li key={c}>{c}</li>
+                <li key={c.name}>
+                  <a href={c.url} target="_blank" rel="noreferrer">
+                    {c.name}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>

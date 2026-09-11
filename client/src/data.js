@@ -5,7 +5,7 @@ export const profile = {
   email: "routmousami@gmail.com",
   phone: "+91-8050738188",
   linkedin: "https://linkedin.com/in/mousami-rout",
-  github: "https://github.com/mousami-rout",
+  github: "https://github.com/mousami939-droid",
   summary:
     " Ambitious currently pursuing BCA with hands-on experience in full-stack web development, having built and deployed full-stack applications using HTML, CSS, JavaScript, React, Node.js, and MongoDB, along with a Full Stack Development internship at Infidata Technology. Also exploring Machine Learning and Artificial Intelligence through coursework and certifications. Seeking a Full Stack Developer role to build scalable, real-world applications.",
 };
@@ -138,11 +138,10 @@ export const githubRepos = [
 ];
 
 export const certifications = [
-  "Basics of Machine Learning Algorithms — UniAthena, in partnership with Cambridge International Qualifications (Aug 2026)",
-  "Exploratory Data Analysis — NASSCOM FutureSkills Prime (Jul 2026)",
-  "Introduction to OpenAI GPT Models — Infosys Wingspan (May 2026)",
-  "Data Science — Infosys Wingspan (May 2026)",
-  "Cybersecurity Foundations — LinkedIn Learning (Aug 2026)",
+  {
+    name: "Introduction to Artificial Intelligence",
+    url: "/certificates/7944892_Introduction_to_Artificial_Intelligence_10214231-1.pdf",
+  },
 ];
 
 export const additional = {
