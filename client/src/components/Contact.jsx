@@ -64,7 +64,7 @@ export default function Contact() {
               linkedin.com/in/mousami-rout
             </a>
             <a href={profile.github} target="_blank" rel="noreferrer">
-              github.com/mousamirout939-droid
+              github.com/mousami-rout
             </a>
           </div>
         </div>

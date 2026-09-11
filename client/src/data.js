@@ -5,9 +5,9 @@ export const profile = {
   email: "routmousami@gmail.com",
   phone: "+91-8050738188",
   linkedin: "https://linkedin.com/in/mousami-rout",
-  github: "https://github.com/mousamirout939-droid",
+  github: "https://github.com/mousami-rout",
   summary:
-    "BCA student specializing in Machine Learning and AI, with hands-on experience building applied ML systems spanning computer vision, audio classification, risk prediction, and LLM agents — from training and evaluating models to shipping them behind production-style APIs.",
+    " Ambitious currently pursuing BCA with hands-on experience in full-stack web development, having built and deployed full-stack applications using HTML, CSS, JavaScript, React, Node.js, and MongoDB, along with a Full Stack Development internship at Infidata Technology. Also exploring Machine Learning and Artificial Intelligence through coursework and certifications. Seeking a Full Stack Developer role to build scalable, real-world applications.",
 };
 
 export const stats = [
