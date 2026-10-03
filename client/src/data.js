@@ -96,15 +96,28 @@ export const fallbackProjects = [
   },
   {
     slug: "smartserve-ai",
-    title: "SmartServe AI — Kitchen Console",
+    title: "SmartServe AI — WhatsApp Food Ordering Agent",
     year: "2026",
     tagline:
-      "A food-ordering platform pairing a customer ordering experience with a dedicated kitchen management console.",
-    stack: ["Food Ordering", "Kitchen Console", "Vercel"],
+      "A WhatsApp ordering assistant that turns text, voice, and image messages into menu-aware orders, backed by an AI agent and a live operations dashboard.",
+    stack: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "OpenAI GPT-4o",
+      "WhatsApp Cloud API",
+      "n8n",
+      "Razorpay",
+    ],
     bullets: [
-      "Built a customer-facing flow for ordering food.",
-      "Created a dedicated kitchen console for staff to manage orders.",
-      "Deployed the application on Vercel with a public demo.",
+      "Built a WhatsApp ordering agent that handles text, voice, and image messages, using speech transcription and image understanding to interpret customer requests.",
+      "Connected GPT-4o function calling to live MongoDB menus and FAQs so customers can search items, build carts, check order status, and get server-calculated totals.",
+      "Protected order accuracy with database-verified prices, explicit customer confirmation before orders are placed, and deduplication of retried WhatsApp webhooks.",
+      "Created a React admin dashboard for managing menu items, orders, customers, FAQs, and AI analytics, with optional n8n workflow orchestration.",
+      "Added optional Razorpay payments with server-side signature verification; cash on delivery and pay on pickup are also supported.",
     ],
     liveUrl: "https://smartserve-ai-seven.vercel.app/",
   },
@@ -171,6 +184,10 @@ export const certifications = [
     url: "/certificates/project-management-institute-pmi.pdf",
   },
   {
+    name: "Basics of Machine Learning Algorithms",
+    url: "/certificates/basics-of-machine-learning-algorithms.pdf",
+  },
+  {
     name: "Data Science",
     url: "/certificates/data-science-certificate.pptx",
     preview: "/certificates/data-science-preview.png",
@@ -182,11 +199,6 @@ export const certifications = [
   },
   {
     name: "Data Science & Analytics (HP LIFE)",
-    url: "/certificates/hp-life-data-science-analytics-certificate.pptx",
-    preview: "/certificates/hp-life-data-science-analytics-preview.png",
-  },
-  {
-    name: "Data Science & Analytics (HP LIFE - PDF)",
     url: "/certificates/additional-certificate.pdf",
   },
 ];

@@ -9,6 +9,7 @@ const proofBySlug = {
   "research-agent": "34-test pytest suite, zero API key required",
   "ai-guardian": "Dockerized + GitHub Actions CI on every push",
   medicare: "Helmet, rate limiting & XSS protection on every route",
+  "smartserve-ai": "Server-verified totals · explicit order confirmation · duplicate-webhook protection",
 };
 
 function displayUrl(url) {
