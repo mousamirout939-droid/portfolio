@@ -101,8 +101,9 @@ Open `http://localhost:5173`. The contact form will write to your MongoDB
 - **Everything else** (bio, skills, experience, résumé PDF, photo): edit
   `client/src/data.js` and the files in `client/public/` directly — no
   database involved.
-- **Résumé PDF**: replace `client/public/resume.pdf` (the "Download résumé"
-  button links straight to it).
+- **Résumé PDF**: update `client/public/Mousami_Rout_Resume.pdf` (the résumé
+  download buttons link straight to it). The original `client/public/resume.pdf`
+  is retained as a separate file.
 
 ## 4. Design notes
 

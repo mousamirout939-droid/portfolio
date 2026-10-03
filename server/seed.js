@@ -51,6 +51,21 @@ const projects = [
     liveUrl: "https://hospital-management-eight-snowy.vercel.app",
     order: 3,
   },
+  {
+    slug: "smartserve-ai",
+    title: "SmartServe AI — Kitchen Console",
+    year: "2026",
+    tagline:
+      "A food-ordering platform pairing a customer ordering experience with a dedicated kitchen management console.",
+    stack: ["Food Ordering", "Kitchen Console", "Vercel"],
+    bullets: [
+      "Built a customer-facing flow for ordering food.",
+      "Created a dedicated kitchen console for staff to manage orders.",
+      "Deployed the application on Vercel with a public demo.",
+    ],
+    liveUrl: "https://smartserve-ai-seven.vercel.app/",
+    order: 4,
+  },
 ];
 
 async function run() {

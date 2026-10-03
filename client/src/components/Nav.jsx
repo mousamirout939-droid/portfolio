@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
+import { profile } from "../data.js";
 
 const links = [
   { to: "/", label: "Home", end: true },
   { to: "/about", label: "About" },
   { to: "/education", label: "Education" },
+  { to: "/certificate", label: "Certificate" },
   { to: "/skills", label: "Skills" },
   { to: "/experience", label: "Experience" },
   { to: "/projects", label: "Projects" },
@@ -29,7 +31,7 @@ export default function Nav() {
             </NavLink>
           ))}
         </nav>
-        <a className="btn btn-solid nav-cta" href="/resume.pdf" download>
+        <a className="btn btn-solid nav-cta" href={profile.resumeUrl} download>
           Résumé
         </a>
       </div>

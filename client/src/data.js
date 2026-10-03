@@ -5,13 +5,14 @@ export const profile = {
   email: "routmousami@gmail.com",
   phone: "+91-8050738188",
   linkedin: "https://linkedin.com/in/mousami-rout",
-  github: "https://github.com/mousami939-droid",
+  github: "https://github.com/mousamirout939-droid",
+  resumeUrl: "/Mousami_Rout_Resume.pdf",
   summary:
     " Ambitious currently pursuing BCA with hands-on experience in full-stack web development, having built and deployed full-stack applications using HTML, CSS, JavaScript, React, Node.js, and MongoDB, along with a Full Stack Development internship at Infidata Technology. Also exploring Machine Learning and Artificial Intelligence through coursework and certifications. Seeking a Full Stack Developer role to build scalable, real-world applications.",
 };
 
 export const stats = [
-  { label: "shipped apps", value: "3" },
+  { label: "shipped apps", value: "4" },
   { label: "ML models in production", value: "4" },
   { label: "automated tests, one project", value: "34" },
   { label: "SGPA", value: "8.22" },
@@ -93,7 +94,26 @@ export const fallbackProjects = [
     ],
     liveUrl: "https://hospital-management-eight-snowy.vercel.app",
   },
+  {
+    slug: "smartserve-ai",
+    title: "SmartServe AI — Kitchen Console",
+    year: "2026",
+    tagline:
+      "A food-ordering platform pairing a customer ordering experience with a dedicated kitchen management console.",
+    stack: ["Food Ordering", "Kitchen Console", "Vercel"],
+    bullets: [
+      "Built a customer-facing flow for ordering food.",
+      "Created a dedicated kitchen console for staff to manage orders.",
+      "Deployed the application on Vercel with a public demo.",
+    ],
+    liveUrl: "https://smartserve-ai-seven.vercel.app/",
+  },
 ];
+
+export function mergeProjectsWithFallback(projects) {
+  const existingSlugs = new Set(projects.map((project) => project.slug));
+  return [...projects, ...fallbackProjects.filter((project) => !existingSlugs.has(project.slug))];
+}
 
 export const education = {
   degree: "Bachelor of Computer Applications (BCA)",
@@ -141,6 +161,33 @@ export const certifications = [
   {
     name: "Introduction to Artificial Intelligence",
     url: "/certificates/7944892_Introduction_to_Artificial_Intelligence_10214231-1.pdf",
+  },
+  {
+    name: "Microsoft Learn Achievements",
+    url: "/certificates/microsoft-learn-achievements.pdf",
+  },
+  {
+    name: "Project Management Institute (PMI)",
+    url: "/certificates/project-management-institute-pmi.pdf",
+  },
+  {
+    name: "Data Science",
+    url: "/certificates/data-science-certificate.pptx",
+    preview: "/certificates/data-science-preview.png",
+  },
+  {
+    name: "Introduction to OpenAI GPT Models",
+    url: "/certificates/openai-gpt-models-certificate.pptx",
+    preview: "/certificates/openai-gpt-models-preview.png",
+  },
+  {
+    name: "Data Science & Analytics (HP LIFE)",
+    url: "/certificates/hp-life-data-science-analytics-certificate.pptx",
+    preview: "/certificates/hp-life-data-science-analytics-preview.png",
+  },
+  {
+    name: "Data Science & Analytics (HP LIFE - PDF)",
+    url: "/certificates/additional-certificate.pdf",
   },
 ];
 

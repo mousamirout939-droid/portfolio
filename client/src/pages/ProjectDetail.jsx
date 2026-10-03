@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
-import { fallbackProjects } from "../data.js";
+import { fallbackProjects, mergeProjectsWithFallback } from "../data.js";
 import VerifiedTick from "../components/VerifiedTick.jsx";
 
 const API_URL = import.meta.env.VITE_API_URL || "";
@@ -25,7 +25,9 @@ export default function ProjectDetail() {
     fetch(`${API_URL}/api/projects`, { signal: controller.signal })
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((data) => {
-        if (Array.isArray(data) && data.length > 0) setProjects(data);
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(mergeProjectsWithFallback(data));
+        }
       })
       .catch(() => {});
     return () => controller.abort();

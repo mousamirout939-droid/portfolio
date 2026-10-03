@@ -23,7 +23,7 @@ export default function Hero() {
             <Link className="btn btn-solid" to="/projects">
               View projects
             </Link>
-            <a className="btn btn-outline" href="/resume.pdf" download>
+            <a className="btn btn-outline" href={profile.resumeUrl} download>
               Download résumé
             </a>
           </div>

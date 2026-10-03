@@ -8,6 +8,7 @@ import ExperiencePage from "./pages/ExperiencePage.jsx";
 import ProjectsPage from "./pages/ProjectsPage.jsx";
 import ProjectDetail from "./pages/ProjectDetail.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
+import CertificatePage from "./pages/CertificatePage.jsx";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/education" element={<EducationPage />} />
+          <Route path="/certificate" element={<CertificatePage />} />
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/experience" element={<ExperiencePage />} />
           <Route path="/projects" element={<ProjectsPage />} />

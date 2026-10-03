@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fallbackProjects, githubRepos, profile } from "../data.js";
+import { fallbackProjects, githubRepos, mergeProjectsWithFallback, profile } from "../data.js";
 
 const API_URL = import.meta.env.VITE_API_URL || "";
 
@@ -13,7 +13,9 @@ export default function ProjectsPage() {
     fetch(`${API_URL}/api/projects`, { signal: controller.signal })
       .then((res) => (res.ok ? res.json() : Promise.reject(res)))
       .then((data) => {
-        if (Array.isArray(data) && data.length > 0) setProjects(data);
+        if (Array.isArray(data) && data.length > 0) {
+          setProjects(mergeProjectsWithFallback(data));
+        }
       })
       .catch(() => {});
     return () => controller.abort();
@@ -25,7 +27,7 @@ export default function ProjectsPage() {
         <div className="container">
           <div className="section-head reveal">
             <p className="eyebrow">Featured Projects</p>
-            <h2>Three systems, three different failure modes solved.</h2>
+            <h2>Four systems. Real-world problems, solved.</h2>
           </div>
 
           <div className="proj-grid">
@@ -57,8 +59,8 @@ export default function ProjectsPage() {
       <section className="section section-alt">
         <div className="container">
           <div className="section-head reveal">
-            <p className="eyebrow">All GitHub Repositories</p>
-            <h2>Everything else, straight from GitHub.</h2>
+            <p className="eyebrow">Code &amp; Live Demos</p>
+            <h2>Explore the code and try the apps.</h2>
           </div>
 
           {githubRepos.length > 0 ? (
@@ -96,12 +98,32 @@ export default function ProjectsPage() {
           ) : (
             <div className="repo-empty reveal">
               <p>
-                The three case studies above cover the deepest projects — for
-                the full repository list, browse the profile directly.
+                Browse the public repositories on GitHub, or open a live demo
+                to try one of the deployed projects.
               </p>
-              <a className="btn btn-outline on-light" href={profile.github} target="_blank" rel="noreferrer">
-                View all repositories on GitHub ↗
-              </a>
+              <div className="repo-empty-actions">
+                <a className="btn btn-outline on-light" href={profile.github} target="_blank" rel="noreferrer">
+                  View all repositories on GitHub ↗
+                </a>
+              </div>
+              {projects.some((project) => project.liveUrl) && (
+                <div className="repo-live-demos">
+                  <h3>Live demos</h3>
+                  <div className="repo-empty-actions">
+                    {projects.filter((project) => project.liveUrl).map((project) => (
+                      <a
+                        className="btn btn-outline on-light"
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        key={project.slug}
+                      >
+                        {project.title} ↗
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -222,6 +244,19 @@ export default function ProjectsPage() {
           gap: 16px;
           align-items: flex-start;
           max-width: 640px;
+        }
+        .repo-empty-actions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .repo-live-demos {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+        .repo-live-demos h3 {
+          font-size: 14px;
         }
         .repo-empty p {
           color: var(--muted);
